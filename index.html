@@ -15,7 +15,7 @@
     </style>
 </head>
 <body>
-    <h1>Match the Korean word with the English word</h1>
+    <h1>과일 채소 매칭 게임</h1>
 
     <!-- Page 1 -->
     <div id="page-1">
@@ -71,7 +71,86 @@
         <button id="check-btn-2" class="hidden" onclick="nextPage(2)">확인</button>
     </div>
 
-    <!-- More pages follow similar pattern -->
+    <!-- Page 3 -->
+    <div id="page-2" class="hidden">
+        <table>
+            <tr>
+                <td><button onclick="selectWord('korean', '바나나', this)">바나나</button></td>
+                <td><button onclick="selectWord('english', 'plum', this)">plum</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '자두', this)">자두</button></td>
+                <td><button onclick="selectWord('english', 'paprika', this)">paparika</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '감자', this)">감자</button></td>
+                <td><button onclick="selectWord('english', 'garlic', this)">garlic</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '마늘', this)">마늘</button></td>
+                <td><button onclick="selectWord('english', 'banana', this)">banana</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '파프리카', this)">파프리카</button></td>
+                <td><button onclick="selectWord('english', 'potato', this)">potato</button></td>
+            </tr>
+        </table>
+        <button id="check-btn-3" class="hidden" onclick="nextPage(3)">확인</button>
+    </div>
+
+    <!-- Page 4 -->
+    <div id="page-2" class="hidden">
+        <table>
+            <tr>
+                <td><button onclick="selectWord('korean', '망고', this)">망고</button></td>
+                <td><button onclick="selectWord('english', 'strawberry', this)">strawberry</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '딸기', this)">딸기</button></td>
+                <td><button onclick="selectWord('english', 'carrot', this)">carrot</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '호박', this)">호박</button></td>
+                <td><button onclick="selectWord('english', 'mango', this)">mango</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '아보카도', this)">아보카도</button></td>
+                <td><button onclick="selectWord('english', 'pumpkin', this)">pumpkin</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '당근', this)">당근</button></td>
+                <td><button onclick="selectWord('english', 'avocado', this)">avocado</button></td>
+            </tr>
+        </table>
+        <button id="check-btn-4" class="hidden" onclick="nextPage(4)">확인</button>
+    </div>
+
+    <!-- Page 5 -->
+    <div id="page-2" class="hidden">
+        <table>
+            <tr>
+                <td><button onclick="selectWord('korean', '배', this)">배</button></td>
+                <td><button onclick="selectWord('english', 'spinach', this)">spinach</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '포도', this)">포도</button></td>
+                <td><button onclick="selectWord('english', 'peach', this)">peach</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '파인애플', this)">파인애플</button></td>
+                <td><button onclick="selectWord('english', 'grape', this)">grape</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '복숭아', this)">복숭아</button></td>
+                <td><button onclick="selectWord('english', 'pear', this)">pear</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="selectWord('korean', '시금치', this)">시금치</button></td>
+                <td><button onclick="selectWord('english', 'pineapple', this)">pineapple</button></td>
+            </tr>
+        </table>
+        <button id="check-btn-5" class="hidden" onclick="nextPage(5)">확인</button>
+    </div>
 
     <script>
         let selectedKorean = '';
@@ -132,6 +211,9 @@
             const correctPairs = {
                 '옥수수': 'corn', '고추': 'pepper', '양파': 'onion', '토마토': 'tomato', '사과': 'apple',
                 '레몬': 'lemon', '완두콩': 'pea', '가지': 'eggplant', '오렌지': 'orange', '오이': 'cucumber'
+                '바나나': 'banana', '자두': 'plum', '감자': 'potato', '마늘': 'garlic', '파프리카': 'paprika'
+                '망고': 'mango', '딸기': 'strawberry', '호박': 'pumpkin', '아보카도': 'avocado', '당근': 'carrot'
+                '배': 'pear', '포도': 'grape', '파인애플': 'pineapple', '복숭아': 'peach', '시금치': 'spinach'
                 // Add more pairs as per your words
             };
             return correctPairs[korean] === english;
