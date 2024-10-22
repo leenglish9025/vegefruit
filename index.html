@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit and Vegetable Quiz</title>
+    <style>
+        .hidden { display: none; }
+        .correct { background-color: lightgreen; }
+        .incorrect { background-color: lightcoral; }
+        button { margin: 5px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Choose the correct match</h1>
+    <div id="page-1">
+        <p>Choose the correct match for '옥수수'</p>
+        <button onclick="checkAnswer(1, 'corn', true)">corn</button>
+        <button onclick="checkAnswer(1, 'apple', false)">apple</button>
+        <button onclick="checkAnswer(1, 'banana', false)">banana</button>
+        <button onclick="checkAnswer(1, 'tomato', false)">tomato</button>
+        <button onclick="checkAnswer(1, 'lemon', false)">lemon</button>
+        <br><button onclick="nextPage(1)">Next</button>
+    </div>
+
+    <div id="page-2" class="hidden">
+        <p>Choose the correct match for '사과'</p>
+        <button onclick="checkAnswer(2, 'apple', true)">apple</button>
+        <button onclick="checkAnswer(2, 'orange', false)">orange</button>
+        <button onclick="checkAnswer(2, 'potato', false)">potato</button>
+        <button onclick="checkAnswer(2, 'cucumber', false)">cucumber</button>
+        <button onclick="checkAnswer(2, 'plum', false)">plum</button>
+        <br><button onclick="nextPage(2)">Next</button>
+    </div>
+
+    <!-- 더 많은 페이지를 추가할 수 있습니다 -->
+
+    <script>
+        function checkAnswer(page, answer, isCorrect) {
+            const buttons = document.querySelectorAll(`#page-${page} button`);
+            buttons.forEach(button => {
+                button.disabled = true;
+            });
+            if (isCorrect) {
+                event.target.classList.add('correct');
+            } else {
+                event.target.classList.add('incorrect');
+                setTimeout(() => {
+                    buttons.forEach(button => {
+                        if (button.innerText === answer) {
+                            button.classList.add('correct');
+                        }
+                    });
+                }, 1000);
+            }
+        }
+
+        function nextPage(currentPage) {
+            document.getElementById(`page-${currentPage}`).classList.add('hidden');
+            document.getElementById(`page-${currentPage + 1}`).classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
