@@ -8,32 +8,147 @@
         .hidden { display: none; }
         .correct { background-color: lightgreen; }
         .incorrect { background-color: lightcoral; }
-        button { margin: 5px; padding: 10px; }
+        button { margin: 5px; padding: 10px; width: 100px; }
+        table { width: 100%; margin-bottom: 20px; }
+        td { text-align: center; padding: 10px; }
     </style>
 </head>
 <body>
     <h1>Choose the correct match</h1>
+    <!-- Page 1 -->
     <div id="page-1">
-        <p>Choose the correct match for '옥수수'</p>
-        <button onclick="checkAnswer(1, 'corn', true)">corn</button>
-        <button onclick="checkAnswer(1, 'apple', false)">apple</button>
-        <button onclick="checkAnswer(1, 'banana', false)">banana</button>
-        <button onclick="checkAnswer(1, 'tomato', false)">tomato</button>
-        <button onclick="checkAnswer(1, 'lemon', false)">lemon</button>
-        <br><button onclick="nextPage(1)">Next</button>
+        <table>
+            <tr>
+                <td>옥수수</td>
+                <td><button onclick="checkAnswer(1, 'corn', true)">corn</button></td>
+            </tr>
+            <tr>
+                <td>고추</td>
+                <td><button onclick="checkAnswer(1, 'pepper', true)">pepper</button></td>
+            </tr>
+            <tr>
+                <td>양파</td>
+                <td><button onclick="checkAnswer(1, 'onion', true)">onion</button></td>
+            </tr>
+            <tr>
+                <td>토마토</td>
+                <td><button onclick="checkAnswer(1, 'tomato', true)">tomato</button></td>
+            </tr>
+            <tr>
+                <td>사과</td>
+                <td><button onclick="checkAnswer(1, 'apple', true)">apple</button></td>
+            </tr>
+        </table>
+        <button onclick="nextPage(1)" id="next-1" class="hidden">Next</button>
     </div>
 
+    <!-- Page 2 -->
     <div id="page-2" class="hidden">
-        <p>Choose the correct match for '사과'</p>
-        <button onclick="checkAnswer(2, 'apple', true)">apple</button>
-        <button onclick="checkAnswer(2, 'orange', false)">orange</button>
-        <button onclick="checkAnswer(2, 'potato', false)">potato</button>
-        <button onclick="checkAnswer(2, 'cucumber', false)">cucumber</button>
-        <button onclick="checkAnswer(2, 'plum', false)">plum</button>
-        <br><button onclick="nextPage(2)">Next</button>
+        <table>
+            <tr>
+                <td>레몬</td>
+                <td><button onclick="checkAnswer(2, 'lemon', true)">lemon</button></td>
+            </tr>
+            <tr>
+                <td>완두콩</td>
+                <td><button onclick="checkAnswer(2, 'pea', true)">pea</button></td>
+            </tr>
+            <tr>
+                <td>가지</td>
+                <td><button onclick="checkAnswer(2, 'eggplant', true)">eggplant</button></td>
+            </tr>
+            <tr>
+                <td>오렌지</td>
+                <td><button onclick="checkAnswer(2, 'orange', true)">orange</button></td>
+            </tr>
+            <tr>
+                <td>오이</td>
+                <td><button onclick="checkAnswer(2, 'cucumber', true)">cucumber</button></td>
+            </tr>
+        </table>
+        <button onclick="nextPage(2)" id="next-2" class="hidden">Next</button>
     </div>
 
-    <!-- 더 많은 페이지를 추가할 수 있습니다 -->
+    <!-- Page 3 -->
+    <div id="page-3" class="hidden">
+        <table>
+            <tr>
+                <td>바나나</td>
+                <td><button onclick="checkAnswer(3, 'banana', true)">banana</button></td>
+            </tr>
+            <tr>
+                <td>자두</td>
+                <td><button onclick="checkAnswer(3, 'plum', true)">plum</button></td>
+            </tr>
+            <tr>
+                <td>감자</td>
+                <td><button onclick="checkAnswer(3, 'potato', true)">potato</button></td>
+            </tr>
+            <tr>
+                <td>마늘</td>
+                <td><button onclick="checkAnswer(3, 'garlic', true)">garlic</button></td>
+            </tr>
+            <tr>
+                <td>파프리카</td>
+                <td><button onclick="checkAnswer(3, 'bell pepper', true)">bell pepper</button></td>
+            </tr>
+        </table>
+        <button onclick="nextPage(3)" id="next-3" class="hidden">Next</button>
+    </div>
+
+    <!-- Page 4 -->
+    <div id="page-4" class="hidden">
+        <table>
+            <tr>
+                <td>망고</td>
+                <td><button onclick="checkAnswer(4, 'mango', true)">mango</button></td>
+            </tr>
+            <tr>
+                <td>딸기</td>
+                <td><button onclick="checkAnswer(4, 'strawberry', true)">strawberry</button></td>
+            </tr>
+            <tr>
+                <td>호박</td>
+                <td><button onclick="checkAnswer(4, 'pumpkin', true)">pumpkin</button></td>
+            </tr>
+            <tr>
+                <td>아보카도</td>
+                <td><button onclick="checkAnswer(4, 'avocado', true)">avocado</button></td>
+            </tr>
+            <tr>
+                <td>당근</td>
+                <td><button onclick="checkAnswer(4, 'carrot', true)">carrot</button></td>
+            </tr>
+        </table>
+        <button onclick="nextPage(4)" id="next-4" class="hidden">Next</button>
+    </div>
+
+    <!-- Page 5 -->
+    <div id="page-5" class="hidden">
+        <table>
+            <tr>
+                <td>배</td>
+                <td><button onclick="checkAnswer(5, 'pear', true)">pear</button></td>
+            </tr>
+            <tr>
+                <td>포도</td>
+                <td><button onclick="checkAnswer(5, 'grape', true)">grape</button></td>
+            </tr>
+            <tr>
+                <td>파인애플</td>
+                <td><button onclick="checkAnswer(5, 'pineapple', true)">pineapple</button></td>
+            </tr>
+            <tr>
+                <td>복숭아</td>
+                <td><button onclick="checkAnswer(5, 'peach', true)">peach</button></td>
+            </tr>
+            <tr>
+                <td>시금치</td>
+                <td><button onclick="checkAnswer(5, 'spinach', true)">spinach</button></td>
+            </tr>
+        </table>
+        <button onclick="nextPage(5)" id="next-5" class="hidden">Finish</button>
+    </div>
 
     <script>
         function checkAnswer(page, answer, isCorrect) {
@@ -53,6 +168,7 @@
                     });
                 }, 1000);
             }
+            document.getElementById(`next-${page}`).classList.remove('hidden');
         }
 
         function nextPage(currentPage) {
@@ -62,3 +178,4 @@
     </script>
 </body>
 </html>
+
