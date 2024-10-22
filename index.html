@@ -72,7 +72,7 @@
     </div>
 
     <!-- Page 3 -->
-    <div id="page-2" class="hidden">
+    <div id="page-3" class="hidden">
         <table>
             <tr>
                 <td><button onclick="selectWord('korean', '바나나', this)">바나나</button></td>
@@ -80,7 +80,7 @@
             </tr>
             <tr>
                 <td><button onclick="selectWord('korean', '자두', this)">자두</button></td>
-                <td><button onclick="selectWord('english', 'paprika', this)">paparika</button></td>
+                <td><button onclick="selectWord('english', 'paprika', this)">paprika</button></td>
             </tr>
             <tr>
                 <td><button onclick="selectWord('korean', '감자', this)">감자</button></td>
@@ -99,7 +99,7 @@
     </div>
 
     <!-- Page 4 -->
-    <div id="page-2" class="hidden">
+    <div id="page-4" class="hidden">
         <table>
             <tr>
                 <td><button onclick="selectWord('korean', '망고', this)">망고</button></td>
@@ -126,7 +126,7 @@
     </div>
 
     <!-- Page 5 -->
-    <div id="page-2" class="hidden">
+    <div id="page-5" class="hidden">
         <table>
             <tr>
                 <td><button onclick="selectWord('korean', '배', this)">배</button></td>
@@ -149,7 +149,7 @@
                 <td><button onclick="selectWord('english', 'pineapple', this)">pineapple</button></td>
             </tr>
         </table>
-        <button id="check-btn-5" class="hidden" onclick="nextPage(5)">확인</button>
+        <button id="check-btn-5" class="hidden" onclick="alert('게임이 완료되었습니다!')">확인</button>
     </div>
 
     <script>
@@ -203,18 +203,17 @@
 
             // Check if all pairs are matched
             if (correctMatches === 5) {
-                document.getElementById(`check-btn-1`).classList.remove('hidden'); // For page 1
+                document.getElementById(`check-btn-${currentPage}`).classList.remove('hidden'); // For current page
             }
         }
 
         function isCorrectMatch(korean, english) {
             const correctPairs = {
                 '옥수수': 'corn', '고추': 'pepper', '양파': 'onion', '토마토': 'tomato', '사과': 'apple',
-                '레몬': 'lemon', '완두콩': 'pea', '가지': 'eggplant', '오렌지': 'orange', '오이': 'cucumber'
-                '바나나': 'banana', '자두': 'plum', '감자': 'potato', '마늘': 'garlic', '파프리카': 'paprika'
-                '망고': 'mango', '딸기': 'strawberry', '호박': 'pumpkin', '아보카도': 'avocado', '당근': 'carrot'
+                '레몬': 'lemon', '완두콩': 'pea', '가지': 'eggplant', '오렌지': 'orange', '오이': 'cucumber',
+                '바나나': 'banana', '자두': 'plum', '감자': 'potato', '마늘': 'garlic', '파프리카': 'paprika',
+                '망고': 'mango', '딸기': 'strawberry', '호박': 'pumpkin', '아보카도': 'avocado', '당근': 'carrot',
                 '배': 'pear', '포도': 'grape', '파인애플': 'pineapple', '복숭아': 'peach', '시금치': 'spinach'
-                // Add more pairs as per your words
             };
             return correctPairs[korean] === english;
         }
